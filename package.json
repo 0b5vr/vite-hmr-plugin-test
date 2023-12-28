@@ -10,7 +10,10 @@
     "preinstall": "npx only-allow pnpm"
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "@0b5vr/experimental": "^0.9.6",
+    "ts-morph": "^21.0.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-inspect": "^0.8.1"
   }
 }
