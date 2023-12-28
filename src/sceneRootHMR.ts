@@ -29,8 +29,10 @@ function traverseAndReplace(
   }
 }
 
-window.hotComponentObservers ??= new Set();
-window.hotComponentObservers.add((event) => {
-  const classNamesSet = new Set(event.classNames);
-  traverseAndReplace(event.mod, classNamesSet, null, sceneRoot, 0);
-});
+if (import.meta.hot) {
+  window.hotComponentObservers ??= new Set();
+  window.hotComponentObservers.add((event) => {
+    const classNamesSet = new Set(event.classNames);
+    traverseAndReplace(event.mod, classNamesSet, null, sceneRoot, 0);
+  });
+}
